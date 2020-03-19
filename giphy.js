@@ -18,7 +18,35 @@ function displayButtons() {
         $("#button-area").append(showButton);
     }
 }
+//click event listener to all buttons
+$("button").on("click", function ()  {
+    var topics = $(this).attr("data-name");
+    //constructs URL w/food topic
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topics + "&api_key=bbADz3KnghoZiynw8PEXRxCMDhj2WZJu&limit=10";
+    //perform ajax request 
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+    .then(function(response) {
+        console.log(queryURL);
+        console.log(response);
+        
+        var results = response.data;
 
+        for (var j = 0; j < results.length; j++) {
+        var topicDiv = $("<div>");
+        var p = $("<p>").text("Rating: " + results[i].rating);
+        var topicImage = $("<img>");
+        topicImage.attr("src", results[i].images.fixed_height.url);
+        topicDiv.append(p);
+        topicDiv.append(topicImage);
+        $("#display-area").prepend(topicDiv);    
+        
+
+        }
+    })
+});
 
 
 //user clicks a button, page gets 10 static, non-animated gifs from GIPHY API and displays on page
