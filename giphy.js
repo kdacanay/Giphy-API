@@ -1,7 +1,7 @@
 //create an array of strings, each one related to a topic that interests you, save to variable "topics"
 //FOOD! 10 food topics:
 $(document).ready(function () {
-var topics = ["Pizza","Cheeseburgers","Spaghetti","Soup", "Pretzels", "Salad", "Cheese", "Steak","Hot Dogs","Bagels"];
+var topics = ["Pizza","Cheeseburgers","Spaghetti","Soup", "Donuts", "Cheese", "Steak","Hot Dogs","Bagels","Cake"];
 
 //app takes topics array and create buttons to HTML
 function displayButtons() {
@@ -31,13 +31,11 @@ $("#addButton").on("click", function(event) {
     displayButtons();
 });
 
-//click event listener to all buttons
-
                 
     function displayGifs() {
     var food = $(this).attr("data-food");
     //constructs URL w/food topic
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + food + "&api_key=bbADz3KnghoZiynw8PEXRxCMDhj2WZJu&limit=10";
+    var queryURL = `https://api.giphy.com/v1/gifs/search?q=${food}&api_key=bbADz3KnghoZiynw8PEXRxCMDhj2WZJu&limit=10'`;
     console.log(queryURL);
 
     //perform ajax request 
@@ -54,25 +52,27 @@ $("#addButton").on("click", function(event) {
         for (var j = 0; j < results.length; j++) {
         var foodDiv = $("<div>");
         //display rating under each displayed gif
-        var p = $("<p>").text("Rating: " + results[j].rating);
+        var p = $("<p>").text("Rating: " + results[j].rating.toUpperCase());
+        var q = $("<h5>").text(results[j].title.toUpperCase());
         //user clicks a button, page gets 10 static, non-animated gifs from GIPHY API and displays on page
         var foodImage = $("<img>");
          
-        foodImage.attr("src", results[j].images.fixed_height_small_still.url);
-        foodImage.attr("data-still", results[j].images.fixed_height_small_still.url);
-        foodImage.attr("data-animate", results[j].images.fixed_height_small.url);
+        foodImage.attr("src", results[j].images.original_still.url);
+        foodImage.attr("data-still", results[j].images.original_still.url);
+        foodImage.attr("data-animate", results[j].images.original.url);
         foodImage.attr("data-state", "still");
-        foodImage.addClass("image");
-        foodDiv.append(p);
+        foodImage.addClass("card-img-top");
+        foodDiv.append(q);
         foodDiv.append(foodImage);
-        $("#display-area").prepend(foodDiv);    
+        foodDiv.append(p);
+        $("#display-area").append(foodDiv);    
         }
     });
 }
-displayGifs();
+
 displayButtons();
 
-//event listeners
+//click event listener to all buttons to click button and display gifs
 $(document).on("click", ".btnClass", displayGifs);
 $(document).on("click", ".image", function () {
     var state = $(this).attr("data-state");

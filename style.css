@@ -4,3 +4,10 @@
     border-style: groove;
     border-color: whitesmoke;
 }
+/* img {
+    max-height: 150px; 
+} */
+.card-text {
+    text-align: center;
+
+}
