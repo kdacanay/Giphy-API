@@ -45,7 +45,9 @@ $("#addButton").on("click", function(event) {
     })
     .then(function(response) {
         console.log(response);
-        $("#display-area").empty(); //erase previous gifs
+        $("#display-area-1").empty(); //erase previous gifs
+        $("#display-area-2").empty();
+        $("#display-area-3").empty();
         //shows results after grabbing data
         var results = response.data;
         //loops through each grabbed GIF
@@ -61,12 +63,19 @@ $("#addButton").on("click", function(event) {
         foodImage.attr("data-still", results[j].images.original_still.url);
         foodImage.attr("data-animate", results[j].images.original.url);
         foodImage.attr("data-state", "still");
-        foodImage.addClass("card-img-top");
+        foodImage.addClass("image");
         foodDiv.append(q);
         foodDiv.append(foodImage);
         foodDiv.append(p);
-        $("#display-area").append(foodDiv);    
+
+        if (j >= 0 && j < 3) {    
+        $("#display-area-1").append(foodDiv);
+        } else if (j >= 3 && j < 7) {
+        $("#display-area-2").append(foodDiv);
+        } else {
+        $("#display-area-3").append(foodDiv);
         }
+    }
     });
 }
 

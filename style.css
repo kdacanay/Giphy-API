@@ -4,10 +4,14 @@
     border-style: groove;
     border-color: whitesmoke;
 }
-/* img {
-    max-height: 150px; 
-} */
-.card-text {
-    text-align: center;
+img {
+    max-height: 200px; 
+    max-width: 300px;
+    margin: 20px;
 
 }
+#display-area {
+    text-align: center;
+
+};
+
