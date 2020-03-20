@@ -3,7 +3,6 @@
 $(document).ready(function () {
 var topics = ["Pizza","Cheeseburgers","Spaghetti","Soup", "Pretzels", "Salad", "Cheese", "Steak","Hot Dogs","Bagels"];
 
-
 //app takes topics array and create buttons to HTML
 function displayButtons() {
     $("#button-area").empty();
@@ -11,7 +10,7 @@ function displayButtons() {
     for (var i = 0; i < topics.length; i++) {
         var showButton = $("<button>");
     //add a class food-bttn
-        showButton.addClass("btn btn-primary");
+        showButton.addClass("btnClass");
     //add a data-attribute
         showButton.attr("data-food", topics[i]);
     // providing the initial button text
@@ -36,7 +35,7 @@ $("#addButton").on("click", function(event) {
 
                 
     function displayGifs() {
-    var food = $(this).attr("data-name");
+    var food = $(this).attr("data-food");
     //constructs URL w/food topic
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + food + "&api_key=bbADz3KnghoZiynw8PEXRxCMDhj2WZJu&limit=10";
     console.log(queryURL);
@@ -46,7 +45,7 @@ $("#addButton").on("click", function(event) {
         url: queryURL,
         method: "GET"
     })
-    .done(function(response) {
+    .then(function(response) {
         console.log(response);
         $("#display-area").empty(); //erase previous gifs
         //shows results after grabbing data
@@ -74,7 +73,7 @@ displayGifs();
 displayButtons();
 
 //event listeners
-$(document).on("click", ".food", displayGifs);
+$(document).on("click", ".btnClass", displayGifs);
 $(document).on("click", ".image", function () {
     var state = $(this).attr("data-state");
     if (state === "still") {
