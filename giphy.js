@@ -95,8 +95,10 @@ $(document).ready(function () {
     })
 
     // //weather javascript (TEST):
+    // $("#weatherButton").on("click".function() {
+    // var weatherZIP; 
     // var weatherAPIKey = "bd380aef65f86e853fbb40f0606884f1";
-    // var zipcodeURL = "https://api.openweathermap.org/data/2.5/weather?zip=19026,us&appid=" + weatherAPIKey;
+    // var zipcodeURL = "https://api.openweathermap.org/data/2.5/weather?zip="+weatherZIP+"us&appid=" + weatherAPIKey;
 
     // $.ajax({
     //         url: zipcodeURL,
@@ -110,4 +112,5 @@ $(document).ready(function () {
     //user clicks gif and gif animates.  
 
     //user clicks animated gif again and gif pauses
+    
 })
