@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bellota|Viaoda+Libre&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -15,34 +16,34 @@
 </head>
 
 <body>
-    
-    <div class="jumbotron jumbotron-fluid" id="jumbotronid">
+
+    <div class="jumbotron" id="jumbotronid">
         <div class="container">
-          <h1 class="display-4">EARTH GIFS</h1>
+            <div class="display-4" id="title">EARTH GIFS</div>
         </div>
-    </div>  
-    <div class="container" id="button-container">    
+    </div>
+    <div class="container" id="button-container">
         <div class="row">
             <div class="col-lg-6">
                 <div id="button-area"></div>
             </div>
             <div class="col-lg-3">
-                    <form id="gif-form">
-                        <label for="form-input">Add An Earth Search Button!</label>
-                        <input type="text" id="form-input" />
-                        <br>
-                        <br>
-                        <input id="addButton" type="submit" value="Submit" />
-                    </form>
-                    <div>
-                        <img src="GIPHY Logo 30px.png" id="giphyLOGO"/>
-                        <img id="openWeatherLogo" src="openweather-negative-logo-RGB.png" />
-                    </div>
+                <form id="gif-form">
+                    <label for="form-input">Add An Earth Search Button!</label>
+                    <input type="text" id="form-input" />
+                    <br>
+                    <br>
+                    <input id="addButton" type="submit" value="Submit" />
+                </form>
+                <div>
+                    <img src="GIPHY Logo 30px.png" id="giphyLOGO" />
+                    <img id="openWeatherLogo" src="openweather-negative-logo-RGB.png" />
+                </div>
             </div>
             <div class="col-lg-3">
                 <form id="weatherButton">
                     <label for="form-zipcode">Check the 5-Day Forecast in Your Location</label>
-                    <input type="number" id="weatherButton" placeholder="zip code"/>
+                    <input type="number" id="weatherButton" placeholder="zip code" />
                     <br>
                     <br>
                     <input id="weatherButton" type="submit" value="Submit" />
@@ -50,32 +51,32 @@
             </div>
         </div>
     </div>
-        <br>
-        <br>
+    <br>
+    <br>
     <div class="container">
         <div class="row">
-                <div class= "col-xs-12 col-sm-12 col-md-4" id="display-area-1">             
-                </div>
-                <div class= "col-xs-12 col-sm-12 col-md-4" id="display-area-2">
-                </div>
-                <div class= "col-xs-12 col-sm-12 col-md-4" id="display-area-3">
-                </div>
+            <div class="col-xs-12 col-sm-12 col-md-4" id="display-area-1">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4" id="display-area-2">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4" id="display-area-3">
+            </div>
         </div>
     </div>
 
-    
-    
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-        </script>
-        <script src="giphy.js" type="text/JavaScript"></script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="giphy.js" type="text/JavaScript"></script>
 </body>
 
 </html>
