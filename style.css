@@ -6,7 +6,7 @@ body {
 #jumbotronid {
     background-color: #AEC2BF;
     border-bottom: #757575;
-    border-bottom-style: groove;
+    border-bottom-style: ridge;
     opacity: .9;
 
 }
@@ -43,7 +43,7 @@ body {
     background-color: darkgray;
     padding: 15px;
     border-color: #757575;
-    border-style: groove;
+    border-style: ridge;
 }
 
 #button-area {
@@ -55,7 +55,7 @@ body {
     max-height: 200px;
     max-width: 300px;
     margin: 20px;
-    border-style: solid;
+    border-style: ridge;
     border-color: #757575;
 }
 
@@ -64,6 +64,8 @@ body {
     font-weight: bold;
     background-color: #AEC2BF;
     text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+    border-color: #757575;
+    border-style: ridge;
 }
 
 button {
@@ -72,7 +74,7 @@ button {
     text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
     width: 130px;
     border-color: #757575;
-    border-style: groove;
+    border-style: ridge;
 }
 
 @media screen and (max-width: 1200px) {
