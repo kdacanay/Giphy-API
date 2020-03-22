@@ -5,6 +5,7 @@ $(document).ready(function () {
 
     //app takes topics array and create buttons to HTML
     function displayButtons() {
+        $(".card").hide();
         $("#button-area").empty();
         // loop that appends a button for each string in the array
         for (var i = 0; i < topics.length; i++) {
@@ -94,23 +95,27 @@ $(document).ready(function () {
         }
     })
 
-    // //weather javascript (TEST):
-    // $("#weatherButton").on("click".function() {
-    // var weatherZIP; 
-    // var weatherAPIKey = "bd380aef65f86e853fbb40f0606884f1";
-    // var zipcodeURL = "https://api.openweathermap.org/data/2.5/weather?zip="+weatherZIP+"us&appid=" + weatherAPIKey;
+    //weather javascript (TEST):  
+    $(".submit").on("click", function (event) {
+        event.preventDefault();
+        $(".card").show();
+        var weather = $(".weatherzip").val().trim();
+        var weatherAPIKey = "bd380aef65f86e853fbb40f0606884f1";
+        var zipcodeURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + weather + ",us&appid=" + weatherAPIKey;
 
-    // $.ajax({
-    //         url: zipcodeURL,
-    //         method: "GET"
-    //     })
-    //     .then(function (responseW) {
-    //         console.log(zipcodeURL);
-    //         console.log(responseW);
-    //     })
+        $.ajax({
+                url: zipcodeURL,
+                method: "GET"
+            })
+            .then(function (responseW) {
+                console.log(zipcodeURL);
+                console.log(responseW);
+                $(".location").html("<h4>Location: " + responseW.name + "</h4>");
+                $(".temperature").html("<h5>Present Temp(F): " + responseW.main.temp + "</h5>");
+                $(".feelsLike").html("<h5>Feels Like(F): " + responseW.main.feels_like + "</h5>");
+                $(".todaysForecast").html("<h5>Today's Forecast: " + responseW.weather[0].description + "</h5>");
 
-    //user clicks gif and gif animates.  
-
-    //user clicks animated gif again and gif pauses
-    
+            })
+        //to convert kelvin to F, F = (K - 273.15) * 1.80 + 32
+    })
 })

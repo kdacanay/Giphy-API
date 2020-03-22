@@ -4,20 +4,31 @@ body {
 }
 
 #jumbotronid {
-    background-color: darkgray;
+    background-color: #AEC2BF;
     border-bottom: black;
     border-bottom-style: groove;
+    opacity: .9;
     
 }
-
+#title {
+    font-family: 'Elsie Swash Caps', cursive;
+    font-size: 100px;
+    color: #757575;
+}
 .container {
+    opacity: .9;
     text-align: center;
-    font-family: 'Viaoda Libre', cursive;
-    font-size: 23px;
+    font-family: 'IM Fell Double Pica SC', serif;
+    font-size: 22px;
     font-weight: bolder;
         color: white;
-        text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+        text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
    
+}
+#click-tag {
+    margin-top: 5px;
+    font-size: 22px;
+    font-weight: bolder;
 }
 #openWeatherLogo {
     max-width: 90px;
@@ -30,7 +41,7 @@ body {
     border-style: groove;
 }
 #button-area {
-    margin-top: 30px;
+    margin-top: 20px;
     font-weight: bold;
 }
 
@@ -40,7 +51,15 @@ img {
     margin: 20px;
     border-style: solid;
     border-color: black;
-
 }
-
-
+.card-body {
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #AEC2BF;
+    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+}
+button {
+    background-color: #AEC2BF;
+    color: white;
+    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+}
