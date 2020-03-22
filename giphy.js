@@ -102,7 +102,7 @@ $(document).ready(function () {
         var weather = $(".weatherzip").val().trim();
         var weatherAPIKey = "bd380aef65f86e853fbb40f0606884f1";
         var zipcodeURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + weather + ",us&appid=" + weatherAPIKey;
-
+        
         $.ajax({
                 url: zipcodeURL,
                 method: "GET"
@@ -110,12 +110,17 @@ $(document).ready(function () {
             .then(function (responseW) {
                 console.log(zipcodeURL);
                 console.log(responseW);
+                var mainTemp = ((responseW.main.temp - 273.15) * 1.80) + 32; 
+                var roundTemp = Math.round(mainTemp);
+                var feelsTemp = ((responseW.main.feels_like - 273.15) * 1.80) + 32;
+                var feelsRoundTemp = Math.round(feelsTemp); 
                 $(".location").html("<h4>Location: " + responseW.name + "</h4>");
-                $(".temperature").html("<h5>Present Temp(F): " + responseW.main.temp + "</h5>");
-                $(".feelsLike").html("<h5>Feels Like(F): " + responseW.main.feels_like + "</h5>");
+                $(".temperature").html("<h5>Present Temp(F): &deg" + roundTemp + "</h5>");
+                $(".feelsLike").html("<h5>Feels Like(F): &deg" + feelsRoundTemp + "</h5>");
                 $(".todaysForecast").html("<h5>Today's Forecast: " + responseW.weather[0].description + "</h5>");
-
+                
             })
         //to convert kelvin to F, F = (K - 273.15) * 1.80 + 32
     })
+    
 })
