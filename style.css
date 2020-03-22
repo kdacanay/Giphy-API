@@ -5,61 +5,89 @@ body {
 
 #jumbotronid {
     background-color: #AEC2BF;
-    border-bottom: black;
+    border-bottom: #757575;
     border-bottom-style: groove;
     opacity: .9;
-    
+
 }
+
 #title {
     font-family: 'Elsie Swash Caps', cursive;
     font-size: 100px;
     color: #757575;
 }
+
 .container {
     opacity: .9;
     text-align: center;
     font-family: 'IM Fell Double Pica SC', serif;
     font-size: 22px;
     font-weight: bolder;
-        color: white;
-        text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
-   
+    color: white;
+    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+
 }
+
 #click-tag {
     margin-top: 5px;
     font-size: 22px;
     font-weight: bolder;
 }
+
 #openWeatherLogo {
     max-width: 90px;
     max-height: 70px;
 }
+
 #button-container {
     background-color: darkgray;
     padding: 15px;
-    border-color: black;
+    border-color: #757575;
     border-style: groove;
 }
+
 #button-area {
     margin-top: 20px;
     font-weight: bold;
 }
 
-img {
-    max-height: 200px; 
+.image {
+    max-height: 200px;
     max-width: 300px;
     margin: 20px;
     border-style: solid;
-    border-color: black;
+    border-color: #757575;
 }
+
 .card-body {
     font-size: 22px;
     font-weight: bold;
     background-color: #AEC2BF;
     text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
 }
+
 button {
     background-color: #AEC2BF;
     color: white;
     text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+    width: 130px;
+    border-color: #757575;
+    border-style: groove;
+}
+
+@media screen and (max-width: 1200px) {
+    input {
+        width: 175px;
+        margin-top: 100px;
+    }
+
+    input.weatherzip {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    #gif-form {
+        margin-top: 20px;
+    }
 }
